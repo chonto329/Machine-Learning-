@@ -1,46 +1,56 @@
 REPORTE DEL DATAFRAME
 ============================================================
-Filas: 299
-Columnas: 13
+Filas: 16713
+Columnas: 18
 Duplicados: 0
 
 Columnas y tipos:
-- age: int64
-- has_anaemia: bool
-- creatinine_phosphokinase_concentration_in_blood: float64
-- has_diabetes: bool
-- heart_ejection_fraction: float64
-- has_high_blood_pressure: bool
-- platelets_concentration_in_blood: float64
-- serum_creatinine_concentration_in_blood: float64
-- serum_sodium_concentration_in_blood: float64
-- is_male: bool
-- is_smoker: bool
-- days_in_study: int64
-- is_dead: int64
+- Name: object
+- Platform: object
+- Year_of_Release: float64
+- Genre: object
+- Publisher: object
+- NA_Sales: float64
+- EU_Sales: float64
+- JP_Sales: float64
+- Other_Sales: float64
+- Global_Sales: float64
+- Critic_Score: float64
+- Critic_Count: float64
+- User_Score: float64
+- User_Count: float64
+- Developer: object
+- Rating: object
+- Year_missing: float64
+- Is_Hit: float64
 
 Valores nulos por columna:
-- age: 0
-- has_anaemia: 0
-- creatinine_phosphokinase_concentration_in_blood: 0
-- has_diabetes: 0
-- heart_ejection_fraction: 0
-- has_high_blood_pressure: 0
-- platelets_concentration_in_blood: 0
-- serum_creatinine_concentration_in_blood: 0
-- serum_sodium_concentration_in_blood: 0
-- is_male: 0
-- is_smoker: 0
-- days_in_study: 0
-- is_dead: 0
+- Name: 0
+- Platform: 0
+- Year_of_Release: 269
+- Genre: 0
+- Publisher: 0
+- NA_Sales: 0
+- EU_Sales: 0
+- JP_Sales: 0
+- Other_Sales: 0
+- Global_Sales: 0
+- Critic_Score: 8576
+- Critic_Count: 8576
+- User_Score: 9123
+- User_Count: 9123
+- Developer: 0
+- Rating: 6764
+- Year_missing: 0
+- Is_Hit: 0
 
 Estadísticas numéricas:
-           age  creatinine_phosphokinase_concentration_in_blood  heart_ejection_fraction  platelets_concentration_in_blood  serum_creatinine_concentration_in_blood  serum_sodium_concentration_in_blood  days_in_study  is_dead
-count  299.000                                          299.000                  299.000                           299.000                                  299.000                              299.000        299.000  299.000
-mean    60.829                                          581.839                   38.084                        263358.029                                    1.394                              136.625        130.261    0.321
-std     11.895                                          970.288                   11.835                         97804.237                                    1.035                                4.412         77.614    0.468
-min     40.000                                           23.000                   14.000                         25100.000                                    0.500                              113.000          4.000    0.000
-25%     51.000                                          116.500                   30.000                        212500.000                                    0.900                              134.000         73.000    0.000
-50%     60.000                                          250.000                   38.000                        262000.000                                    1.100                              137.000        115.000    0.000
-75%     70.000                                          582.000                   45.000                        303500.000                                    1.400                              140.000        203.000    1.000
-max     95.000                                         7861.000                   80.000                        850000.000                                    9.400                              148.000        285.000    1.000
+       Year_of_Release   NA_Sales   EU_Sales   JP_Sales  Other_Sales  Global_Sales  Critic_Score  Critic_Count  User_Score  User_Count  Year_missing     Is_Hit
+count        16444.000  16713.000  16713.000  16713.000    16713.000     16713.000      8137.000      8137.000    7590.000    7590.000     16713.000  16713.000
+mean          2006.486      0.263      0.145      0.078        0.047         0.534        68.968        26.361       7.125     162.230         0.016      0.252
+std              5.876      0.814      0.503      0.309        0.187         1.548        13.938        18.980       1.500     561.282         0.126      0.434
+min           1980.000      0.000      0.000      0.000        0.000         0.010        13.000         3.000       0.000       4.000         0.000      0.000
+25%           2003.000      0.000      0.000      0.000        0.000         0.060        60.000        12.000       6.400      10.000         0.000      0.000
+50%           2007.000      0.080      0.020      0.000        0.010         0.170        71.000        21.000       7.500      24.000         0.000      0.000
+75%           2010.000      0.240      0.110      0.040        0.030         0.470        79.000        36.000       8.200      81.000         0.000      1.000
+max           2016.000     41.360     28.960     10.220       10.570        82.530        98.000       113.000       9.700   10665.000         1.000      1.000

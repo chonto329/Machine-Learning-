@@ -1,14 +1,14 @@
-# Machine_Learning
+# Proyecto intregrador III
 
 Proyecto de aprendizaje automático y análisis de datos con Python. Incluye un notebook para descargar y explorar un dataset de insuficiencia cardíaca desde Hugging Face, transformar sus datos y generar reportes descriptivos.
 
-## Participantes Grupo *AE_Grupo 2*
+## Participantes Grupo P3-2026
 
-Sol Elena Serna Vargas
+Jhonatan 
 Juan Esteban Ospina Lopez
 
 ## Dataset
-https://huggingface.co/datasets/mstz/heart_failure
+https://huggingface.co/datasets/0tizm0/video-games
 
 
 ## Funcionalidades
