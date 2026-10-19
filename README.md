@@ -105,8 +105,10 @@ opcionales; si se proporciona `filename`, el DataFrame también se guarda en
 from rp_utils import HFDatasetLoader
 
 loader = HFDatasetLoader(
-    "mstz/heart_failure",
-    filename="datos/heart_failurecsv",
+    dataset_name="0tizm0/video-games",
+    split="train",
+    filename="datos/video-games.csv",
+    
 )
 df = loader.load()
 ```
