@@ -4,8 +4,10 @@ Proyecto de aprendizaje automático y análisis de datos con Python. Incluye un 
 
 ## Participantes Grupo P3-2026
 
-Jhonatan 
+Jhonatan Dair Avila Agamez
 Juan Esteban Ospina Lopez
+Estid Esteban Vásquez 
+
 
 ## Dataset
 https://huggingface.co/datasets/0tizm0/video-games
