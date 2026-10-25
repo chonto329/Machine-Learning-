@@ -46,7 +46,103 @@ class Reportes:
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(self.generar_reporte(df), encoding="utf-8")
         return path
-        
+
+    def reporte_descriptivo(self, df: pd.DataFrame) -> pd.DataFrame:
+        """Devuelve metadatos y estadísticas descriptivas por columna.
+
+        Incluye tipo, límites, conteos de valores nulos/no nulos, cardinalidad,
+        moda y, para columnas numéricas, promedio, mediana, desviación estándar
+        y cuartiles. En columnas de texto, los límites son lexicográficos.
+        """
+        self._validar_dataframe(df)
+        metadatos = []
+
+        for columna, serie in df.items():
+            valores = serie.dropna()
+            moda = valores.mode()
+            es_numerica = (
+                pd.api.types.is_numeric_dtype(serie.dtype)
+                and not pd.api.types.is_bool_dtype(serie.dtype)
+            )
+            limite_inferior = valores.min() if not valores.empty else None
+            limite_superior = valores.max() if not valores.empty else None
+            total = len(serie)
+            longitudes = valores.astype(str).str.len()
+
+            metadato = {
+                "columna": columna,
+                "tipo": str(serie.dtype),
+                "longitud_minima_caracteres": (
+                    int(longitudes.min()) if not longitudes.empty else None
+                ),
+                "longitud_maxima_caracteres": (
+                    int(longitudes.max()) if not longitudes.empty else None
+                ),
+                "longitud_media_caracteres": (
+                    float(longitudes.mean()) if not longitudes.empty else None
+                ),
+                "valores_no_nulos": int(valores.size),
+                "valores_nulos": int(serie.isna().sum()),
+                "porcentaje_nulos": (
+                    float(serie.isna().mean() * 100) if total else None
+                ),
+                "valores_unicos": int(valores.nunique()),
+                "moda": moda.iloc[0] if not moda.empty else None,
+                "frecuencia_moda": (
+                    int(valores.value_counts().iloc[0]) if not valores.empty else 0
+                ),
+                "limite_inferior": limite_inferior,
+                "limite_superior": limite_superior,
+                "rango": (
+                    limite_superior - limite_inferior
+                    if es_numerica and not valores.empty
+                    else None
+                ),
+                "media": float(valores.mean()) if es_numerica and not valores.empty else None,
+                "mediana": (
+                    float(valores.median()) if es_numerica and not valores.empty else None
+                ),
+                "desviacion_estandar": (
+                    float(valores.std()) if es_numerica and not valores.empty else None
+                ),
+                "cuartil_25": (
+                    float(valores.quantile(0.25))
+                    if es_numerica and not valores.empty
+                    else None
+                ),
+                "cuartil_75": (
+                    float(valores.quantile(0.75))
+                    if es_numerica and not valores.empty
+                    else None
+                ),
+            }
+            metadatos.append(metadato)
+
+        return pd.DataFrame(
+            metadatos,
+            columns=[
+                "columna",
+                "tipo",
+                "longitud_minima_caracteres",
+                "longitud_maxima_caracteres",
+                "longitud_media_caracteres",
+                "valores_no_nulos",
+                "valores_nulos",
+                "porcentaje_nulos",
+                "valores_unicos",
+                "moda",
+                "frecuencia_moda",
+                "limite_inferior",
+                "limite_superior",
+                "rango",
+                "media",
+                "mediana",
+                "desviacion_estandar",
+                "cuartil_25",
+                "cuartil_75",
+            ],
+        )
+
     def reporte_regresion_lineal(
         self,
         df: pd.DataFrame,

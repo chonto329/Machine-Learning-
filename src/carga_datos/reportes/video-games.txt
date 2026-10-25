@@ -1,0 +1,56 @@
+REPORTE DEL DATAFRAME
+============================================================
+Filas: 5000
+Columnas: 18
+Duplicados: 0
+
+Columnas y tipos:
+- Name: object
+- Platform: object
+- Year_of_Release: float64
+- Genre: object
+- Publisher: object
+- NA_Sales: float64
+- EU_Sales: float64
+- JP_Sales: float64
+- Other_Sales: float64
+- Global_Sales: float64
+- Critic_Score: float64
+- Critic_Count: float64
+- User_Score: float64
+- User_Count: float64
+- Developer: object
+- Rating: object
+- Year_missing: float64
+- Is_Hit: float64
+
+Valores nulos por columna:
+- Name: 0
+- Platform: 0
+- Year_of_Release: 69
+- Genre: 0
+- Publisher: 0
+- NA_Sales: 0
+- EU_Sales: 0
+- JP_Sales: 0
+- Other_Sales: 0
+- Global_Sales: 0
+- Critic_Score: 1866
+- Critic_Count: 1866
+- User_Score: 1823
+- User_Count: 1823
+- Developer: 0
+- Rating: 1539
+- Year_missing: 0
+- Is_Hit: 0
+
+Estadísticas numéricas:
+       Year_of_Release  NA_Sales  EU_Sales  JP_Sales  Other_Sales  Global_Sales  Critic_Score  Critic_Count  User_Score  User_Count  Year_missing    Is_Hit
+count         4931.000  5000.000  5000.000  5000.000     5000.000      5000.000      3134.000      3134.000    3177.000    3177.000      5000.000  5000.000
+mean          2005.363     0.739     0.425     0.194        0.139         1.496        75.176        35.684       7.377     279.101         0.014     0.841
+std              6.669     1.371     0.855     0.539        0.323         2.582        12.108        22.012       1.312     782.361         0.117     0.366
+min           1980.000     0.000     0.000     0.000        0.000         0.380        20.000         4.000       0.000       4.000         0.000     0.000
+25%           2002.000     0.250     0.090     0.000        0.030         0.530        69.000        18.000       6.700      20.000         0.000     1.000
+50%           2007.000     0.420     0.210     0.000        0.070         0.820        77.000        31.000       7.700      51.000         0.000     1.000
+75%           2010.000     0.780     0.450     0.130        0.140         1.510        84.000        51.000       8.300     169.000         0.000     1.000
+max           2016.000    41.360    28.960    10.220       10.570        82.530        98.000       113.000       9.600   10665.000         1.000     1.000
