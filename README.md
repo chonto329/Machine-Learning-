@@ -1,6 +1,6 @@
 # Proyecto intregrador III
 
-Proyecto de aprendizaje automático y análisis de datos con Python. Incluye un notebook para descargar y explorar un dataset de insuficiencia cardíaca desde Hugging Face, transformar sus datos y generar reportes descriptivos.
+Proyecto de aprendizaje automático y análisis de datos con Python. Incluye un notebook para descargar y explorar un dataset de venta de video juegos desde Hugging Face, transformar sus datos y generar reportes descriptivos.
 
 ## Participantes Grupo P3-2026
 
