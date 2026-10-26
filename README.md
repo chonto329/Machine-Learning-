@@ -4,7 +4,7 @@ Proyecto de aprendizaje automático y análisis de datos con Python. Incluye un 
 
 ## Participantes Grupo P3-2026
 
-Jhonatan Dair Avila Agamez
+Jonatan Dair Avila Agamez
 Juan Esteban Ospina Lopez
 Estid Esteban Vásquez 
 
