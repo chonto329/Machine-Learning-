@@ -10,8 +10,44 @@ Estid Esteban Vásquez
 
 
 ## Dataset
-https://huggingface.co/datasets/0tizm0/video-games
 
+https://huggingface.co/datasets/sayanroy058/Business-Sales
+
+El dataset sayanroy058/Business-Sales recopila un registro histórico de transacciones de venta de vehículos usados en subastas y concesionarios. A pesar de su nombre genérico, se trata de una base de datos tabular diseñada para el análisis de ventas de automóviles, estimación de precios mediante aprendizaje automático (regresión) y evaluación de la depreciación vehicular según características como kilometraje, condición y mercado.
+
+Columnas del dataset (16 en total)
+
+year: Año de fabricación del vehículo.
+
+make: Marca del vehículo (ej. Kia, BMW, Volvo, Nissan).
+
+model: Modelo del vehículo (ej. Sorento, 3 Series, Altima).
+
+trim: Versión o nivel de equipamiento (ej. LX, 328i SULEV, T5).
+
+body: Tipo de carrocería (ej. SUV, Sedan).
+
+transmission: Tipo de transmisión (ej. automatic, manual).
+
+vin: Código VIN de identificación única del vehículo.
+
+state: Estado o región (EE. UU.) donde se realizó la transacción (ej. ca para California).
+
+condition: Puntuación numérica que evalúa el estado de conservación del auto.
+
+odometer: Kilometraje (o millas) acumulado en el odómetro.
+
+color: Color exterior del vehículo.
+
+interior: Color del tapizado o acabado interior.
+
+seller: Entidad o empresa que vende el vehículo (concesionario, compañía de leasing, etc.).
+
+mmr: Manheim Market Report, un indicador del precio estimado de mercado del vehículo.
+
+sellingprice: Precio final de venta pactado en la transacción.
+
+saledate: Fecha y hora exactas en las que se cerró la venta.
 
 ## Funcionalidades
 
@@ -22,20 +58,28 @@ https://huggingface.co/datasets/0tizm0/video-games
 
 ## Estructura del proyecto
 
-```text
-.
-├── requirements.txt
+Machine-Learning-
+├── .github/
+│   └── workflows/
+│       └── ejecutar.yml
+├── env/
 ├── src/
+│   ├── carga_datos/
+│   │   ├── datos/
+│   │   │   ├── Business-Sales.csv
+│   │   │   └── video-games.csv
+│   │   ├── reportes/
+│   │   ├── EA1_Carga_Datos.ipynb
+│   │   └── EA3_Transformacion_Enriquecimiento...
 │   ├── clases_po/
-│   │   ├── hf_loader.py            # Carga y exportación de datasets
-│   │   └── reportes.py             # Generación de reportes
-│   └── carga_datos/
-│       ├── datos/                  # Archivos CSV procesados generados
-│       ├── reportes/               # Reportes de texto generados
-│       └── EA1_Carga_Datos.ipynb   # Notebook de carga y análisis
-└── .github/
-    └── workflows/
-        └── ejecutar.yml            # Ejecución automática del notebook
+│   │   ├── __pycache__/
+│   │   ├── __init__.py
+│   │   ├── hf_loader.py
+│   │   └── reportes.py
+│   └── static/
+├── .gitignore
+├── README.md
+└── requirements.txt
 
 ## Uso
 
@@ -107,9 +151,9 @@ opcionales; si se proporciona `filename`, el DataFrame también se guarda en
 from rp_utils import HFDatasetLoader
 
 loader = HFDatasetLoader(
-    dataset_name="0tizm0/video-games",
+    dataset_name="sayanroy058/Business-Sales",
     split="train",
-    filename="datos/video-games.csv",
+    filename="datos/Business-Sales.csv",
     
 )
 df = loader.load()
