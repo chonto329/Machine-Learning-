@@ -1,0 +1,88 @@
+DESCRIPCIÓN DEL DATAFRAME TRANSFORMADO Y ENRIQUECIDO
+============================================================
+Filas: 16713
+Columnas: 24
+
+Columnas y tipos:
+Name                 string
+Platform             string
+Year_of_Release       Int64
+Genre                string
+Publisher            string
+NA_Sales            float64
+EU_Sales            float64
+JP_Sales            float64
+Other_Sales         float64
+Global_Sales        float64
+Critic_Score        float64
+Critic_Count          Int64
+User_Score          float64
+User_Count            Int64
+Developer            string
+Rating               string
+Year_missing          Int64
+Is_Hit                Int64
+Rating_Desc          object
+Fabricante           object
+Decada               string
+Region_Dominante     object
+Rango_Ventas         string
+Rango_Critica        string
+
+Valores nulos por columna:
+Name                   0
+Platform               0
+Year_of_Release      269
+Genre                  0
+Publisher              0
+NA_Sales               0
+EU_Sales               0
+JP_Sales               0
+Other_Sales            0
+Global_Sales           0
+Critic_Score        8576
+Critic_Count        8576
+User_Score          9123
+User_Count          9123
+Developer              0
+Rating                 0
+Year_missing           0
+Is_Hit                 0
+Rating_Desc            0
+Fabricante             0
+Decada               269
+Region_Dominante       0
+Rango_Ventas           0
+Rango_Critica          0
+
+Duplicados exactos: 0
+
+Estadísticas descriptivas (numéricas):
+                   count         mean         std     min     25%     50%     75%      max
+Year_of_Release  16444.0  2006.486256    5.875525  1980.0  2003.0  2007.0  2010.0   2016.0
+NA_Sales         16713.0     0.263302    0.813565     0.0     0.0    0.08    0.24    41.36
+EU_Sales         16713.0     0.145045    0.503359     0.0     0.0    0.02    0.11    28.96
+JP_Sales         16713.0     0.077625    0.308871     0.0     0.0     0.0    0.04    10.22
+Other_Sales      16713.0     0.047343    0.186742     0.0     0.0    0.01    0.03    10.57
+Global_Sales     16713.0     0.533568    1.548125    0.01    0.06    0.17    0.47    82.53
+Critic_Score      8137.0    68.967679   13.938165    13.0    60.0    71.0    79.0     98.0
+Critic_Count      8137.0    26.360821   18.980495     3.0    12.0    21.0    36.0    113.0
+User_Score        7590.0     7.125046    1.500006     0.0     6.4     7.5     8.2      9.7
+User_Count        7590.0   162.229908  561.282326     4.0    10.0    24.0    81.0  10665.0
+Year_missing     16713.0     0.016095    0.125846     0.0     0.0     0.0     0.0      1.0
+Is_Hit           16713.0     0.251601    0.433946     0.0     0.0     0.0     1.0      1.0
+
+Estadísticas descriptivas (categóricas):
+                  count unique                          top   freq
+Name              16713  11559  Need for Speed: Most Wanted     12
+Platform          16713     31                          PS2   2161
+Genre             16713     12                       Action   3369
+Publisher         16713    580              Electronic Arts   1356
+Developer         16713   1697                     Sin dato   6618
+Rating            16713      9               Sin clasificar   6764
+Rating_Desc       16713      9               Sin clasificar   6764
+Fabricante        16713      6                         Sony   6720
+Decada            16444      4                        2000s   9193
+Region_Dominante  16713      4                 Norteamérica  10225
+Rango_Ventas      16713      5                     0.1-0.5M   6474
+Rango_Critica     16713      5                  Sin puntaje   8576
