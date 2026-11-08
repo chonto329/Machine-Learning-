@@ -157,4 +157,38 @@ loader = HFDatasetLoader(
     
 )
 df = loader.load()
+
+
+## AE3 - Transformación y enriquecimiento (src/AE3)
+
+**Necesidad:** orientar qué géneros, plataformas y editores priorizar en un catálogo de videojuegos a partir del histórico de ventas (millones de unidades).
+
+**Preguntas de negocio**
+- P1: ¿Qué géneros aportan más ventas globales?
+- P2: ¿Qué plataformas y fabricantes concentran las ventas y cómo se reparten por región?
+- P3: ¿Cómo evolucionaron las ventas por año?
+- P4: ¿Qué editores lideran ventas y éxitos (Is_Hit)?
+- P5: ¿Los juegos mejor calificados por la crítica venden más?
+
+**Transformaciones:** limpieza de texto, eliminación de duplicados exactos y registros sin nombre, tipos enteros para años y conteos, "Sin clasificar" en Rating nulo, "Sin dato" en Developer desconocido, validación de rangos y coherencia de ventas. Los puntajes nulos no se imputan.
+
+**Enriquecimiento:** Fabricante (desde Platform), Decada (desde el año), Region_Dominante, Rango_Ventas y Rango_Critica.
+
+**Ejecución**
+```bash
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+pip install jupytext nbconvert ipykernel datasets pandas
+cd src/AE3
+jupytext --to notebook AE3_transformacion.py
+jupyter nbconvert --to notebook --execute --inplace AE3_transformacion.ipynb
+```
+
+**Salidas (rutas relativas a src/AE3)**
+- Dataset preparado: `datos/video_games_preparado.csv`
+- Tablas de resultados: `tablas/P1_ventas_por_genero.csv`, `tablas/P2a_ventas_por_plataforma.csv`, `tablas/P2b_ventas_por_fabricante.csv`, `tablas/P3_ventas_por_anio.csv`, `tablas/P4_top15_editores.csv`, `tablas/P5_ventas_por_rango_critica.csv`, `tablas/00_comparacion_antes_despues.csv`
+- Resumen descriptivo (regenerado en cada ejecución): `reportes/descripcion_df_final.txt`
+
+**Limitaciones:** no hay costos, por lo que no se analiza rentabilidad; 2016 está incompleto; Critic_Score y User_Score tienen cerca de la mitad de los valores nulos; el análisis es descriptivo, no causal.
 ```
